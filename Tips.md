@@ -4,18 +4,18 @@
 
 简单的 if...else 语句可以使用三元操作符来代替
 
-```
+```javascript
 let answer
 if (x > 10) {
-    answer = 'is greater'
+  answer = 'is greater'
 } else {
-    answer = 'is lesser'
+  answer = 'is lesser'
 }
 ```
 
 简写：
 
-```
+```javascript
 const answer = x > 10 ? 'is greater' : 'is lesser'
 ```
 
@@ -23,15 +23,15 @@ const answer = x > 10 ? 'is greater' : 'is lesser'
 
 为变量赋值时，如果害怕赋值成 null，undefined 或空值，可以使用短路赋值
 
-```
+```javascript
 if (variable1 !== null || variable1 !== undefined || variable1 !== '') {
-     let variable2 = variable1
+  let variable2 = variable1
 }
 ```
 
 简写：
 
-```
+```javascript
 const variable2 = variable1 || 'new'
 ```
 
@@ -39,7 +39,7 @@ const variable2 = variable1 || 'new'
 
 当需要写数字带有很多零时（如 10000000），可以采用指数（1e7）来代替
 
-```
+```javascript
 1e7 === 10000000 // true
 ```
 
@@ -47,19 +47,19 @@ const variable2 = variable1 || 'new'
 
 如果属性名与 key 名相同，则可以采用 ES6 的方法：
 
-```
-const obj = { x:x, y:y }
+```javascript
+const obj = { x: x, y: y }
 ```
 
 简写：
 
-```
+```javascript
 const obj = { x, y }
 ```
 
 ## 箭头函数
 
-```
+```javascript
 function sayHello(name) {
   console.log('Hello', name)
 }
@@ -79,7 +79,7 @@ const func = function func() {
 
 简写:
 
-```
+```javascript
 sayHello = name => console.log('Hello', name)
 
 setTimeout(() => console.log('Loaded'), 2000)
@@ -101,45 +101,43 @@ const func = () => ({ foo: 1 })
 
 ## 参数默认值
 
-```
+```javascript
 function volume(l, w, h) {
-  if (w === undefined)
-    w = 3
-  if (h === undefined)
-    h = 4
+  if (w === undefined) w = 3
+  if (h === undefined) h = 4
   return l * w * h
 }
 ```
 
 简写：
 
-```
-volume = (l, w = 3, h = 4 ) => (l * w * h)
+```javascript
+volume = (l, w = 3, h = 4) => l * w * h
 
 volume(2) //output: 24
 ```
 
 ## 模板字符串
 
-```
+```javascript
 const db = 'http://' + host + ':' + port + '/' + database
 ```
 
 简写：
 
-```
+```javascript
 const db = `http://${host}:${port}/${database}`
 ```
 
 ## 解构赋值
 
-```
+```javascript
 let [foo, [[bar], baz]] = [1, [[2], 3]]
 foo // 1
 bar // 2
 baz // 3
 
-let [ , , third] = ["foo", "bar", "baz"]
+let [, , third] = ['foo', 'bar', 'baz']
 third // "baz"
 
 let [x, , y] = [1, 2, 3]
@@ -157,5 +155,3 @@ z // []
 ```
 
 [详细介绍](http://es6.ruanyifeng.com/#docs/destructuring)
-
-##
